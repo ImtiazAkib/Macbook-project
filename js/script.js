@@ -44,3 +44,20 @@ document.getElementById('btn-secondary-storage').addEventListener('click', funct
     storageCostCalc('secondary');
 
 })
+
+// shipment calculation
+function delveryCost(delivery) {
+    const deliveryCost = document.getElementById('delivery-cost');
+    if (delivery == 'free') {
+        deliveryCost.innerText = 0;
+    }
+    else if (delivery == 'costly') {
+        deliveryCost.innerText = 20;
+    }
+}
+document.getElementById('free-delivery').addEventListener('click', function () {
+    delveryCost('free');
+})
+document.getElementById('costly-delivery').addEventListener('click', function () {
+    delveryCost('costly');
+})

@@ -43,8 +43,10 @@
                     <!-- shipment section -->
                     <div>
                         <h4>Choose your delivery option</h4>
-                        <button class="btn btn-outline-secondary">Friday, Aug 25 FREE Prime Delivery</button>
-                        <button class="btn btn-outline-secondary">Friday, Aug 21 Delivery charge $20</button>
+                        <button id="free-delivery" class="btn btn-outline-secondary">Friday, Aug 25 FREE Prime
+                            Delivery</button>
+                        <button id="costly-delivery" class="btn btn-outline-secondary">Friday, Aug 21 Delivery charge
+                            $20</button>
                     </div>
                 </section>
                 <!-- Price calculation -->
@@ -63,12 +65,12 @@
                     </div>
                     <div class="row">
                         <h5 class="col-4">Delivery charge</h5>
-                        <h6 class="col-6">$0</h6>
+                        <h6 class="col-6">$<span id="delivery-cost">0</span></h6>
                     </div>
                     <hr class="w-50">
                     <div class="row">
                         <h5 class="col-4">Total Price</h5>
-                        <h6 class="col-6">$0</h6>
+                        <h6 class="col-6">$<span>1299</span></h6>
                     </div>
                 </section>
             </div>
