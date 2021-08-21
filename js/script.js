@@ -7,10 +7,12 @@ function memoryCostCalc(memoryType) {
     else if (memoryType == 'primary') {
         memoryCost.innerText = 180;
     }
+    innerTextAll();
 }
 document.getElementById('btn-primary-memory').addEventListener('click', function () {
 
     memoryCostCalc('primary');
+
 
 })
 document.getElementById('btn-base-memory').addEventListener('click', function () {
@@ -30,7 +32,7 @@ function storageCostCalc(storageType) {
     else if (storageType == 'secondary') {
         storageCost.innerText = 180;
     }
-
+    innerTextAll();
 }
 document.getElementById('btn-base-storage').addEventListener('click', function () {
     storageCostCalc('base');
@@ -54,6 +56,7 @@ function delveryCost(delivery) {
     else if (delivery == 'costly') {
         deliveryCost.innerText = 20;
     }
+    innerTextAll();
 }
 document.getElementById('free-delivery').addEventListener('click', function () {
     delveryCost('free');
@@ -61,3 +64,41 @@ document.getElementById('free-delivery').addEventListener('click', function () {
 document.getElementById('costly-delivery').addEventListener('click', function () {
     delveryCost('costly');
 })
+
+// Total price calculation
+const totalPrice = document.getElementById('total-price');
+const lastTotal = document.getElementById('last-total');
+function innerTextAll() {
+    const memory = document.getElementById('memory-cost');
+    const memoryValue = Number(memory.innerText);
+    const storage = document.getElementById('storage-cost');
+    const storageValue = Number(storage.innerText);
+    const deliveryInput = document.getElementById('delivery-cost');
+    const deliveryFee = Number(deliveryInput.innerText);
+    const grandTotal = 1299 + memoryValue + storageValue + deliveryFee;
+    totalPrice.innerText = grandTotal;
+    lastTotal.innerText = grandTotal;
+
+}
+
+// promo code section
+let lastTotalValue = Number(lastTotal.innerText);
+document.getElementById('discount-btn').addEventListener('click', function () {
+    const input = document.getElementById('input-text');
+    let inputValue = input.value;
+    if (inputValue == 'stevekaku') {
+        const free = lastTotal.innerText * 0.2;
+        lastTotal.innerText = lastTotal.innerText - free;
+        input.value = '';
+    }
+})
+
+
+
+
+
+
+
+
+
+
